@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id="emp1" class="SpringCore.hexaware.com.hexaware.Employee">
+    <constructor-arg index="0" value="102" />
+    <constructor-arg index="1" value="Ajay" />
+    <constructor-arg index="2" value="200000" />
+    </bean>
+    
+    
+    <bean id="dept1" class="SpringCore.hexaware.com.hexaware.Department">
+    <constructor-arg index="0" value="1111" />
+    <constructor-arg index="1" value="HR" />
+    <constructor-arg index="2" ref="emp1" />
+    </bean>
+    
+    <bean id="engine" class="SpringCore.hexaware.com.hexaware.Engine">
+        <property name="type" value="Petrol"/>
+    </bean>
+
+    <bean id="car" class="SpringCore.hexaware.com.hexaware.Car">
+        <property name="carId" value="101"/>
+        <property name="carName" value="BMW"/>
+        
+    </bean>
+    
+    <bean id="std1" class="SpringCore.hexaware.com.hexaware.Student">
+
+    <property name="rollno" value="101"/>
+    <property name="name" value="Arti"/>
+
+    <property name="subjects">
+        <list>
+            <value>DBMS</value>
+            <value>OS</value>
+            <value>REACT</value>
+            <value>JAVASCRIPT</value>
+        </list>
+    </property>
+    
+    <property name="skills">
+        <set>
+            <value>Java</value>
+            <value>Spring</value>
+            <value>SQL</value>
+            <value>HTML</value>
+        </set>
+    </property>
+    
+    <property name="subjectMarks">
+        <map>
+            <entry key="DBMS" value="90"/>
+            <entry key="OS" value="85"/>
+            <entry key="REACT" value="88"/>
+        </map>
+    </property>
+    
+
+</bean> </beans>
